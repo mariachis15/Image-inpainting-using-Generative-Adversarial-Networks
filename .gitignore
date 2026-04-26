@@ -1,0 +1,9 @@
+@"
+checkpoints/
+__pycache__/
+venv/
+data/
+input/
+output/
+*.pth
+"@ | Out-File -Encoding utf8 .gitignore
