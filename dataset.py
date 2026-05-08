@@ -33,18 +33,18 @@ class FaceInpaintingDataset(Dataset):
 
     def generate_random_mask(self):
         mask = torch.zeros((1, self.image_size, self.image_size))
-    
+
         num_rectangles = random.randint(1, 3)
-    
+
         for _ in range(num_rectangles):
             mask_w = random.randint(self.mask_size_min, self.mask_size_max)
             mask_h = random.randint(self.mask_size_min, self.mask_size_max)
-    
+
             x = random.randint(0, self.image_size - mask_w)
             y = random.randint(0, self.image_size - mask_h)
-    
-            mask[:, y:y + mask_h, x:x + mask_w] = 1.0
-    
+
+            mask[:, y : y + mask_h, x : x + mask_w] = 1.0
+
         return torch.clamp(mask, 0.0, 1.0)
 
     def __getitem__(self, idx):
