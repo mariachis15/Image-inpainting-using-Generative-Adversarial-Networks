@@ -1,5 +1,3 @@
-"""Local evaluation script with per-mask-size breakdown."""
-
 import argparse
 import json
 from pathlib import Path

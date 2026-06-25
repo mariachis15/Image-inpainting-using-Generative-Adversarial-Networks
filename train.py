@@ -63,7 +63,7 @@ for epoch in range(epochs):
 
         fake_images = generator(masked_images, masks)
 
-        # Train Discriminator
+        # train discriminator
         optimizer_d.zero_grad()
 
         real_pred = discriminator(real_images)
@@ -79,7 +79,7 @@ for epoch in range(epochs):
         d_loss.backward()
         optimizer_d.step()
 
-        # Train Generator
+        # train Generator
         optimizer_g.zero_grad()
 
         fake_pred = discriminator(fake_images)

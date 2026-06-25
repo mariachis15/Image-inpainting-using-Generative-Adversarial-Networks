@@ -28,6 +28,11 @@ mask_h = random.randint(48, 96)
 x = random.randint(0, image_size - mask_w)
 y = random.randint(0, image_size - mask_h)
 
+# mask_w = 24
+# mask_h = 56
+# x = 30
+# y = 80
+
 mask = Image.new("L", (image_size, image_size), 0)
 draw = ImageDraw.Draw(mask)
 draw.rectangle([x, y, x + mask_w, y + mask_h], fill=255)
